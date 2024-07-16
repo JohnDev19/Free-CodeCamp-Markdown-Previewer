@@ -1,0 +1,154 @@
+/* md.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro&display=swap');
+
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #3498db;
+  --text-color: #333;
+  --bg-color: #ecf0f1;
+  --editor-bg: #fff;
+  --preview-bg: #f9f9f9;
+  --border-color: #bdc3c7;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.editor-container, .preview-container {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+#editor, #preview {
+  width: 100%;
+  min-height: 300px;
+  padding: 20px;
+  border: none;
+  font-size: 16px;
+}
+
+#editor {
+  resize: vertical;
+  font-family: 'Source Code Pro', monospace;
+  background-color: var(--editor-bg);
+}
+
+#preview {
+  background-color: var(--preview-bg);
+  overflow-wrap: break-word;
+}
+
+/* Preview Styles */
+#preview h1, #preview h2, #preview h3, #preview h4, #preview h5, #preview h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+#preview h1 {
+  font-size: 2em;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.3em;
+}
+
+#preview h2 {
+  font-size: 1.5em;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.3em;
+}
+
+#preview a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+#preview a:hover {
+  text-decoration: underline;
+}
+
+#preview code {
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 85%;
+  margin: 0;
+  padding: 0.2em 0.4em;
+}
+
+#preview pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+#preview blockquote {
+  border-left: 0.25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+#preview img {
+  max-width: 100%;
+  box-sizing: content-box;
+}
+
+#preview ul, #preview ol {
+  padding-left: 2em;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .editor-container, .preview-container {
+    width: 48%;
+  }
+}
+
+@media (max-width: 767px) {
+  .editor-container, .preview-container {
+    width: 100%;
+  }
+}
